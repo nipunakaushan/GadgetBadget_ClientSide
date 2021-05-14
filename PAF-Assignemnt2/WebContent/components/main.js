@@ -26,7 +26,7 @@ $(document).on("click", "#btnSave", function(event)
 	} 
 
 	// If valid------------------------  
-	var t = ($("#hidAppIDSave").val() == "") ? "POST" : "PUT";
+	var t = ($("#hidApp_IDSave").val() == "") ? "POST" : "PUT";
 	
 	$.ajax(
 	{
@@ -64,18 +64,18 @@ function onHospitalSaveComplete(response, status){
 		$("#alertError").text("Unknown Error while Saving.");
 		$("#alertError").show();
 	}
-	$("#hidAppIDSave").val("");
-	$("#formAppointment")[0].reset();
+	$("#hidApp_IDSave").val("");
+	$("#formApprovement")[0].reset();
 }
 
 //UPDATE========================================== 
 $(document).on("click", ".btnUpdate", function(event) 
 		{     
-	$("#hidAppIDSave").val($(this).closest("tr").find('#hidAppIDUpdate').val());     
-	$("#name").val($(this).closest("tr").find('td:eq(0)').text());    
-	$("#mobile").val($(this).closest("tr").find('td:eq(1)').text());     
-	$("#email").val($(this).closest("tr").find('td:eq(2)').text());     
-	$("#nic").val($(this).closest("tr").find('td:eq(3)').text()); 
+	$("#hidApp_IDSave").val($(this).closest("tr").find('#hidApp_IDUpdate').val());     
+	$("#app_status").val($(this).closest("tr").find('td:eq(0)').text());    
+	$("#app_Details").val($(this).closest("tr").find('td:eq(1)').text());     
+	$("#app_date").val($(this).closest("tr").find('td:eq(2)').text());     
+	$("#endorser_type").val($(this).closest("tr").find('td:eq(3)').text()); 
 	
 
 });
@@ -87,7 +87,7 @@ $(document).on("click", ".btnRemove", function(event){
 	{
 		url : "ApprovementAPI",
 		type : "DELETE",
-		data : "appID=" + $(this).data("appid"),
+		data : "app_ID=" + $(this).data("app_id"),
 		dataType : "text",
 		complete : function(response, status)
 		{
@@ -124,34 +124,29 @@ function onHospitalDeletedComplete(response, status)
 
 //CLIENTMODEL
 function validateHospitalForm() {  
-	// NAME  
-	if ($("#name").val().trim() == "")  {   
-		return "Insert fullName.";  
+	// app_status  
+	if ($("#app_status").val().trim() == "")  {   
+		return "Insert app_status.";  
 		
 	} 
 	
-	 // MOBILE  
-	if ($("#mobile").val().trim() == "")  {   
-		return "Insert Mobile.";  
+	 // app_Details  
+	if ($("#app_Details").val().trim() == "")  {   
+		return "Insert app_Details.";  
 		
 	} 
 	 
-	 // is numerical value  
-	var tmpMobile = $("#mobile").val().trim();  
-	if (!$.isNumeric(tmpMobile))  {   
-		return "Insert a numerical value for Mobile Number.";  
-		
-	}
+	
 	 
 	 // Email 
-	if ($("#email").val().trim() == "")  {   
-		return "Insert Email.";  
+	if ($("#app_date").val().trim() == "")  {   
+		return "Insert app_date.";  
 		
 	} 
 	
-	// NIC  
-	if ($("#nic").val().trim() == "")  {   
-		return "Insert NIC.";  
+	// endorser_type  
+	if ($("#endorser_type").val().trim() == "")  {   
+		return "Insert endorser_type.";  
 		
 	} 
 	 
