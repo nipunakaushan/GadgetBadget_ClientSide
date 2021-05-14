@@ -73,7 +73,7 @@ public class Approvement {
 				  
 				  con.close(); 
 
-				  // Complete the HTML table   
+				  // Complete the HTML tables
 				  output += "</table>"; 
 				}
 				catch (Exception e) {  
