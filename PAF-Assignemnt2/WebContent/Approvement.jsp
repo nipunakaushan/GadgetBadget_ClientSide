@@ -17,7 +17,7 @@
 			<div class="col-8">       
 				<h1 class="m-3">Approvement Management</h1>        
 				
-				<form id="formAppointment" name="formAppointment" method="post" action="Approvement.jsp">  
+				<form id="formApprovement" name="formApprovement" method="post" action="Approvement.jsp">  
 					app_status:  
 					<input id="app_status" name="app_status" type="text" class="form-control form-control-sm">  
 					
