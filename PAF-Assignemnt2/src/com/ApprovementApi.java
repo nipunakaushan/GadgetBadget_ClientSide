@@ -16,7 +16,7 @@ import model.Approvement;;
 /**
  * Servlet implementation class DoctorAPI
  */
-@WebServlet("/AppointmentAPI")
+@WebServlet("/ApprovementAPI")
 public class ApprovementApi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
